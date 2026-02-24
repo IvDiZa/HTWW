@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memex · Original</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">📄 About</a>
+        <a href="hypercard.html">🃏 Hypercard</a>
+        <a href="info_library.html">📚 Info Library</a>
+        <a href="memex.html" class="active">🗃️ Memex</a>
+        <a href="hypercard-v2.html">🃏 Hypercard V2</a>
+        <a href="memex-v2.html">🗃️ Memex V2</a>
+    </nav>
+
+    <main class="main-content">
+        <h1 class="page-title">🗃️ Memex</h1>
+        
+        <div class="typewriter-container">
+            <div class="typewriter-text" id="typewriter-memex"></div>
+        </div>
+
+        <div class="carousel-section">
+            <h2 class="carousel-title">Memex Microfilm</h2>
+            <div class="carousel-container" id="carousel-memex">
+                <button class="carousel-btn" data-dir="prev">←</button>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23b8d0f5'/%3E%3Ctext x='60' y='140' font-family='monospace' font-size='28' fill='%232563eb'%3E📇 memex 1945%3C/text%3E%3C/svg%3E" class="carousel-slide" alt="Memex">
+                <button class="carousel-btn" data-dir="next">→</button>
+            </div>
+        </div>
+
+        <div class="info-boxes">
+            <div class="info-card" data-popup="📊 FACT: Vannevar Bush described Memex in his 1945 essay 'As We May Think'.">
+                <h3>📋 Facts</h3>
+                <span class="info-badge">click</span>
+            </div>
+            <div class="info-card" data-popup="ℹ️ INFO: Memex inspired hypertext, the web, and personal computing.">
+                <h3>ℹ️ Information</h3>
+                <span class="info-badge">click</span>
+            </div>
+            <div class="info-card" data-popup="🔗 LINK: https://en.wikipedia.org/wiki/Memex">
+                <h3>🌐 Link</h3>
+                <span class="info-badge">click</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>📁 Memex · Vannevar Bush · 1945</span>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createTypewriter('typewriter-memex', [
+                'As We May Think',
+                'Memex',
+                'Trail of thoughts',
+                'Vannevar Bush 1945'
+            ]);
+            
+            createCarousel('carousel-memex', [
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23b8d0f5\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E📇 memex 1945%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23aac0e5\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E📇 microfilm desk%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%239cb0d5\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E📇 associative trails%3C/text%3E%3C/svg%3E'
+            ]);
+        });
+    </script>
+</body>
+</html>

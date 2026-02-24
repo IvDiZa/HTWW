@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About · Development</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html" class="active">📄 About</a>
+        <a href="hypercard.html">🃏 Hypercard</a>
+        <a href="info_library.html">📚 Info Library</a>
+        <a href="memex.html">🗃️ Memex</a>
+        <a href="hypercard-v2.html">🃏 Hypercard V2</a>
+        <a href="memex-v2.html">🗃️ Memex V2</a>
+    </nav>
+
+    <main class="main-content">
+        <h1 class="page-title">📄 About This Archive</h1>
+        
+        <div class="typewriter-container">
+            <div class="typewriter-text" id="typewriter-about"></div>
+        </div>
+
+        <div class="floating-boxes">
+            <div class="float-box">
+                <strong>How elements were developed</strong><br>
+                Based on mockups 1-4.png, combining retro folder metaphors with modern interactions.
+                <span class="source-link" data-popup="View original mockups: folder-based navigation with hover effects">🔗 sources</span>
+            </div>
+            <div class="float-box">
+                <strong>Where information came from</strong><br>
+                HyperCard manuals, Vannevar Bush's essays, internet history archives.
+                <span class="source-link" data-popup="Bibliography: As We May Think (1945), HyperCard design documents">📚 references</span>
+            </div>
+            <div class="float-box">
+                <strong>Illustrations & design</strong><br>
+                Inspired by early Macintosh, pixel aesthetics, and blue folder navigation.
+                <span class="source-link" data-popup="Design process: Pink background (#ffdae5), blue accents (#2563eb)">🎨 moodboard</span>
+            </div>
+            <div class="float-box">
+                <strong>Animation & effects</strong><br>
+                Floating boxes, typewriter, hover previews - all pure CSS/JS.
+                <span class="source-link" data-popup="CSS keyframes for floating, JS for typewriter">⚡ effects</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="info-boxes">
+            <div class="info-card" data-popup="📊 FACT: The first website was created in 1991 at CERN by Tim Berners-Lee.">
+                <h3>📋 Facts</h3>
+                <span class="info-badge">click</span>
+            </div>
+            <div class="info-card" data-popup="ℹ️ INFO: This site uses pink background (#ffdae5) with blue accents (#2563eb).">
+                <h3>ℹ️ Information</h3>
+                <span class="info-badge">click</span>
+            </div>
+            <div class="info-card" data-popup="🌐 LINK: https://example.com/hypercard-archive">
+                <h3>🌐 Link</h3>
+                <span class="info-badge">click</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>📁 About · development story · 2025</span>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createTypewriter('typewriter-about', [
+                'How the elements were developed',
+                'Where information came from',
+                'Floating boxes with sources',
+                'Animation & effects'
+            ]);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home · The HyperCard I</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="active">🏠 Home</a>
+        <a href="about.html">📄 About</a>
+        <a href="hypercard.html">🃏 Hypercard</a>
+        <a href="info_library.html">📚 Info Library</a>
+        <a href="memex.html">🗃️ Memex</a>
+        <a href="hypercard-v2.html">🃏 Hypercard V2</a>
+        <a href="memex-v2.html">🗃️ Memex V2</a>
+    </nav>
+
+    <main class="main-content">
+        <div class="typewriter-container">
+            <div class="typewriter-text" id="typewriter-main"></div>
+        </div>
+
+        <div class="folders-grid">
+            <div class="folder" data-target="hypercard" data-popup="📁 Click to explore HyperCard">
+                <div class="folder-icon">📂</div>
+                <div class="folder-name">HYPERCARD</div>
+                <div class="folder-hover-img">🃏 Stack of cards</div>
+            </div>
+            <div class="folder" data-target="memex" data-popup="📁 Click to explore Memex">
+                <div class="folder-icon">📂</div>
+                <div class="folder-name">MEMEX</div>
+                <div class="folder-hover-img">🔗 Trails of thought</div>
+            </div>
+            <div class="folder" data-target="info_library" data-popup="📁 Click to explore Info Library">
+                <div class="folder-icon">📂</div>
+                <div class="folder-name">INFO LIBRARY</div>
+                <div class="folder-hover-img">🌐 Universal knowledge</div>
+            </div>
+        </div>
+
+        <div class="info-boxes">
+            <div class="info-card" data-popup="📌 FACT: HyperCard was released in 1987 and inspired the World Wide Web.">
+                <h3>📋 Facts</h3>
+                <p>The box expands to give the information</p>
+                <span class="info-badge">click to expand</span>
+            </div>
+            <div class="info-card" data-popup="🛠️ INFORMATION: This site was developed from original mockups with a retro aesthetic.">
+                <h3>ℹ️ Information</h3>
+                <p>How elements were developed</p>
+                <span class="info-badge">click to expand</span>
+            </div>
+            <div class="info-card" data-popup="🔗 LINK: https://archive.org/details/hypercard">
+                <h3>🌐 Link to Internet</h3>
+                <p>Connect to modern web</p>
+                <span class="info-badge">click to expand</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>📁 The HyperCard I · blue folders · pink archive · 2025</span>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createTypewriter('typewriter-main', [
+                'The HyperCard I',
+                'A typewriter effect',
+                'Welcome to HyperCard',
+                '📂 Three folders below'
+            ]);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperCard · Original</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">📄 About</a>
+        <a href="hypercard.html" class="active">🃏 Hypercard</a>
+        <a href="info_library.html">📚 Info Library</a>
+        <a href="memex.html">🗃️ Memex</a>
+        <a href="hypercard-v2.html">🃏 Hypercard V2</a>
+        <a href="memex-v2.html">🗃️ Memex V2</a>
+    </nav>
+
+    <main class="main-content">
+        <h1 class="page-title">🃏 The HyperCard I</h1>
+        
+        <div class="typewriter-container">
+            <div class="typewriter-text" id="typewriter-hypercard"></div>
+        </div>
+
+        <div class="carousel-section">
+            <h2 class="carousel-title">HyperCard Version 1.2.5</h2>
+            <div class="carousel-container" id="carousel-hypercard">
+                <button class="carousel-btn" data-dir="prev">←</button>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23aac8ff'/%3E%3Ctext x='60' y='140' font-family='monospace' font-size='28' fill='%232563eb'%3E💾 HyperCard 1.2.5%3C/text%3E%3C/svg%3E" class="carousel-slide" alt="HyperCard">
+                <button class="carousel-btn" data-dir="next">→</button>
+            </div>
+        </div>
+
+        <div class="info-boxes">
+            <div class="info-card" data-popup="📘 FACT: HyperCard included a programming language called HyperTalk, with English-like syntax.">
+                <h3>📋 Facts</h3>
+                <span class="info-badge">click</span>
+            </div>
+            <div class="info-card" data-popup="ℹ️ INFO: Designed by Bill Atkinson in 1987, it inspired the World Wide Web.">
+                <h3>ℹ️ Information</h3>
+                <span class="info-badge">click</span>
+            </div>
+            <div class="info-card" data-popup="🔗 LINK: https://archive.org/details/hypercard-stacks">
+                <h3>🌐 Link</h3>
+                <span class="info-badge">click</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>📁 HyperCard · original version · 1987-2025</span>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createTypewriter('typewriter-hypercard', [
+                'Welcome to HyperCard',
+                'Version 1.2.5',
+                'Stack of cards',
+                'Clickable buttons'
+            ]);
+            
+            createCarousel('carousel-hypercard', [
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23aac8ff\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E💾 HyperCard 1.2.5%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%2390b0f0\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E💾 Stack of cards%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23bad0ff\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E💾 HyperTalk code%3C/text%3E%3C/svg%3E'
+            ]);
+        });
+    </script>
+</body>
+</html>
