@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info Library</title>
+    <title>Microsoft · Info Library</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,55 +18,58 @@
     </nav>
 
     <main class="main-content">
-        <h1 class="page-title">📚 Info Library</h1>
+        <h1 class="page-title">📚 Information Library</h1>
         
         <div class="typewriter-container">
             <div class="typewriter-text" id="typewriter-library"></div>
         </div>
 
         <div class="carousel-section">
-            <h2 class="carousel-title">Universal Knowledge</h2>
+            <h2 class="carousel-title">History of Information</h2>
             <div class="carousel-container" id="carousel-library">
-                <button class="carousel-btn" data-dir="prev">←</button>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23fad0d8'/%3E%3Ctext x='60' y='140' font-family='monospace' font-size='28' fill='%232563eb'%3E📖 ancient texts%3C/text%3E%3C/svg%3E" class="carousel-slide" alt="Library">
-                <button class="carousel-btn" data-dir="next">→</button>
+                <button class="carousel-btn" data-dir="prev" aria-label="Previous image">←</button>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'%3E%3Crect width='500' height='300' fill='%23ffe6f0'/%3E%3Ctext x='80' y='160' font-family='Segoe UI, sans-serif' font-size='24' fill='%230078d4'%3E📖 Library of Alexandria%3C/text%3E%3C/svg%3E" class="carousel-slide" alt="Library of Alexandria">
+                <button class="carousel-btn" data-dir="next" aria-label="Next image">→</button>
             </div>
+            <p style="text-align: center; margin-top: 1rem; color: #5a5a5a;">The evolution of knowledge preservation</p>
         </div>
 
         <div class="info-boxes">
-            <div class="info-card" data-popup="📊 FACT: The Library of Alexandria held an estimated 400,000 scrolls.">
-                <h3>📋 Facts</h3>
-                <span class="info-badge">click</span>
+            <div class="info-card" data-popup="The Library of Alexandria, founded in the 3rd century BCE, held an estimated 400,000 to 700,000 scrolls. It was one of the largest and most significant libraries of the ancient world, symbolizing universal knowledge.">
+                <h3>📋 Alexandria</h3>
+                <span class="info-badge">Ancient library</span>
             </div>
-            <div class="info-card" data-popup="ℹ️ INFO: The concept of a universal library inspired the internet.">
-                <h3>ℹ️ Information</h3>
-                <span class="info-badge">click</span>
+            <div class="info-card" data-popup="The concept of a universal library has inspired information scientists for centuries, from Paul Otlet's Mundaneum to modern digital archives like the Internet Archive and Google Books.">
+                <h3>ℹ️ Universal Knowledge</h3>
+                <span class="info-badge">Modern vision</span>
             </div>
-            <div class="info-card" data-popup="🌐 LINK: https://archive.org">
-                <h3>🌐 Link</h3>
-                <span class="info-badge">click</span>
+            <div class="info-card" data-popup="https://archive.org">
+                <h3>🌐 Internet Archive</h3>
+                <span class="info-badge">Digital library</span>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <span>📁 Info Library · universal knowledge · 2025</span>
+        <span>📁 Info Library · Universal Knowledge · Microsoft Archive 2025</span>
     </footer>
 
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             createTypewriter('typewriter-library', [
-                'The dream of universal knowledge',
-                'Info Library',
-                'Knowledge base',
-                'Library of Alexandria'
+                'Universal Knowledge Base',
+                'From Alexandria to Internet',
+                'Digital Preservation',
+                'The Library of the Future',
+                'Information Through Ages'
             ]);
             
             createCarousel('carousel-library', [
-                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23fad0d8\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E📖 ancient texts%3C/text%3E%3C/svg%3E',
-                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23f5bac8\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E📚 medieval manuscripts%3C/text%3E%3C/svg%3E',
-                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23fcc2d0\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E🌐 digital archive%3C/text%3E%3C/svg%3E'
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23ffe6f0\'/%3E%3Ctext x=\'80\' y=\'160\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E📖 Library of Alexandria%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23ffd9e6\'/%3E%3Ctext x=\'80\' y=\'160\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E📚 Medieval Manuscripts%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23ffccd9\'/%3E%3Ctext x=\'80\' y=\'160\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E🏛️ Renaissance Libraries%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23ffbfd1\'/%3E%3Ctext x=\'80\' y=\'160\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E🌐 Digital Internet Age%3C/text%3E%3C/svg%3E'
             ]);
         });
     </script>
