@@ -13,6 +13,7 @@
         <a href="hypercard.html">🃏 Hypercard</a>
         <a href="info_library.html">📚 Info Library</a>
         <a href="memex.html">🗃️ Memex</a>
+        <a href="references.html">📋 References</a>
     </nav>
 
     <main class="main-content">
@@ -37,6 +38,64 @@
                 <div class="folder-hover-img">🌐 Universal knowledge</div>
             </div>
         </div>
+
+        <!-- NEW: Contact/Subscribe Form Section -->
+        <section class="form-section" aria-labelledby="form-heading">
+            <h2 id="form-heading" class="section-title">📬 Stay Updated</h2>
+            <div class="form-container">
+                <form id="contact-form" class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Your Name <span aria-hidden="true">*</span></label>
+                        <input type="text" id="name" name="name" required aria-required="true" placeholder="e.g., Tim Berners-Lee">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" required aria-required="true" placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">Primary Interest</label>
+                        <select id="interest" name="interest">
+                            <option value="">-- Select an option --</option>
+                            <option value="hypercard">HyperCard</option>
+                            <option value="memex">Memex</option>
+                            <option value="web-history">Web History</option>
+                            <option value="digital-preservation">Digital Preservation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message / Questions</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Share your thoughts about hypertext history..."></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        <label for="newsletter">Subscribe to our newsletter</label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Send Message</button>
+                        <button type="reset" class="btn-secondary">Clear Form</button>
+                    </div>
+                    
+                    <!-- Form status message (hidden by default) -->
+                    <div id="form-status" class="form-status" role="alert" aria-live="polite" style="display: none;"></div>
+                </form>
+                
+                <div class="form-info-card">
+                    <h3>📋 Why Subscribe?</h3>
+                    <ul>
+                        <li>🔔 Updates on new archive additions</li>
+                        <li>📚 Curated readings on hypertext history</li>
+                        <li>🎓 Exclusive educational resources</li>
+                        <li>💬 Join the digital history community</li>
+                    </ul>
+                    <p class="small-note">Your information is never shared. Unsubscribe anytime.</p>
+                </div>
+            </div>
+        </section>
 
         <div class="info-boxes">
             <div class="info-card" data-popup="HyperCard was released in 1987 by Apple and inspired the World Wide Web. It was created by Bill Atkinson and included a programming language called HyperTalk.">
