@@ -48,7 +48,7 @@ function createTypewriter(elementId, phrases, speed = 80) {
     };
 }
 
-// CAROUSEL FACTORY
+// CAROUSEL FACTORY - Enhanced with proper alt text support
 function createCarousel(carouselId, images) {
     const container = document.getElementById(carouselId);
     if (!container) return null;
@@ -65,8 +65,14 @@ function createCarousel(carouselId, images) {
         // Add fade animation
         img.style.opacity = '0';
         setTimeout(() => {
-            img.src = images[currentIndex];
-            img.alt = `Slide ${currentIndex + 1}: ${images[currentIndex].substring(0, 50)}...`;
+            // Check if images is array of objects (with alt text) or strings
+            if (typeof images[currentIndex] === 'object') {
+                img.src = images[currentIndex].src;
+                img.alt = images[currentIndex].alt;
+            } else {
+                img.src = images[currentIndex];
+                img.alt = `Historical image related to hypertext and information science - slide ${currentIndex + 1}`;
+            }
         }, 150);
         
         setTimeout(() => {
@@ -119,9 +125,14 @@ function createCarousel(carouselId, images) {
     
     // Set initial image
     if (images.length > 0) {
-        img.src = images[0];
+        if (typeof images[0] === 'object') {
+            img.src = images[0].src;
+            img.alt = images[0].alt;
+        } else {
+            img.src = images[0];
+            img.alt = 'Historical image related to hypertext and information science';
+        }
         img.style.transition = 'opacity 0.3s ease';
-        img.alt = 'Carousel slide 1';
     }
     
     // Make container focusable for keyboard
@@ -223,7 +234,7 @@ function setupPopups() {
                                     <div style="font-size: 1.2rem; margin-bottom: 1.5rem;">${icon} You are about to visit:</div>
                                     <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; word-break: break-all; margin-bottom: 1.5rem; font-family: monospace;">${msg}</div>
                                     <div style="display: flex; gap: 1rem; justify-content: center;">
-                                        <a href="${msg}" target="_blank" class="source-link" style="text-decoration: none; background: #0078d4; color: white; padding: 0.8rem 2rem;">Continue to Link</a>
+                                        <a href="${msg}" target="_blank" rel="noopener" class="source-link" style="text-decoration: none; background: #0078d4; color: white; padding: 0.8rem 2rem;">Continue to Link</a>
                                         <button class="modal-close-btn" style="background: #f0f0f0; border: none; padding: 0.8rem 2rem; border-radius: 6px; cursor: pointer;">Cancel</button>
                                     </div>
                                 </div>
@@ -255,6 +266,48 @@ function setupPopups() {
             }
         });
     });
+}
+
+// FORM HANDLER - New function for form submission
+function setupFormHandler() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const statusDiv = document.getElementById('form-status');
+        const name = document.getElementById('name').value;
+        
+        // Simple validation
+        if (!name || !document.getElementById('email').value) {
+            showFormStatus('Please fill in all required fields (marked with *)', 'error');
+            return;
+        }
+        
+        // Simulate form submission (in real project, this would send to server)
+        showFormStatus(`Thank you ${name}! Your message has been received. We'll respond within 2-3 business days.`, 'success');
+        
+        // Optionally reset form after success
+        // form.reset();
+    });
+    
+    form.addEventListener('reset', () => {
+        const statusDiv = document.getElementById('form-status');
+        statusDiv.style.display = 'none';
+    });
+}
+
+function showFormStatus(message, type) {
+    const statusDiv = document.getElementById('form-status');
+    statusDiv.textContent = message;
+    statusDiv.className = `form-status ${type}`;
+    statusDiv.style.display = 'block';
+    
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+        statusDiv.style.display = 'none';
+    }, 5000);
 }
 
 // INITIALIZE ACTIVE NAV LINK
@@ -323,7 +376,7 @@ function setupIntersectionObserver() {
         });
     }, { threshold: 0.1 });
     
-    document.querySelectorAll('.float-box, .info-card, .folder').forEach(el => {
+    document.querySelectorAll('.float-box, .info-card, .folder, .reference-card, .resource-item').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'all 0.6s ease';
@@ -336,6 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setActiveNav();
     setupPopups();
     setupSmoothScroll();
+    setupFormHandler(); // Initialize form handling
     
     // Optional: Uncomment for page transitions
     // addPageTransitions();
