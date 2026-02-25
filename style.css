@@ -49,11 +49,14 @@ body {
     transform: translateY(-1px);
 }
 
+/* Improved active state for accessibility - now includes underline */
 .navbar a.active {
     background-color: white;
     color: #ff69b4;
     font-weight: 600;
     box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+    text-decoration: underline 2px #ff69b4;
+    text-underline-offset: 4px;
 }
 
 /* ----- MAIN CONTENT ----- */
@@ -63,6 +66,20 @@ body {
     margin: 2rem auto;
     padding: 0 2rem;
     width: 100%;
+}
+
+/* ----- SECTION TITLES ----- */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 2.5rem 0 1.5rem;
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    border-bottom: 3px solid #fff0f3;
+    padding-bottom: 0.8rem;
 }
 
 /* ----- MODERN TYPEWRITER ----- */
@@ -98,6 +115,163 @@ body {
 @keyframes blinkCursor {
     0%, 100% { border-color: #ff69b4; }
     50% { border-color: transparent; }
+}
+
+/* ----- FORM SECTION (NEW) ----- */
+.form-section {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.1);
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem 1rem;
+    border: 2px solid #ffe4e8;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: #fffafc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff69b4;
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+}
+
+.form-group input:required {
+    border-left: 4px solid #ff69b4;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: #ff69b4;
+    border: 2px solid #ff69b4;
+}
+
+.btn-secondary:hover {
+    background: #fff0f3;
+}
+
+.form-status {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.form-status.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-status.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.form-info-card {
+    background: linear-gradient(135deg, #fff0f3, #ffe4e8);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #ffb6c1;
+}
+
+.form-info-card h3 {
+    color: #ff1493;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-info-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.form-info-card li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.small-note {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
 }
 
 /* ----- MICROSOFT FABRIC GRID (Home page folders) ----- */
@@ -174,6 +348,166 @@ body {
     opacity: 1;
     transform: translateX(-50%) scale(1);
     top: -50px;
+}
+
+/* ----- REFERENCE PAGE STYLES (NEW) ----- */
+.references-section {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.08);
+}
+
+.reference-card {
+    background: #fff9fb;
+    border: 1px solid #ffe4e8;
+    border-radius: 12px;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+}
+
+.reference-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+    border-color: #ff69b4;
+}
+
+.reference-card h3 {
+    color: #ff69b4;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reference-card p {
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
+}
+
+.code-block {
+    display: block;
+    background: #2d2d2d;
+    color: #f8f8f8;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+.code-note {
+    background: #fff0f3;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.resource-item {
+    background: #fff9fb;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #ffe4e8;
+}
+
+.resource-item h3 {
+    color: #ff69b4;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.resource-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resource-item li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.resource-item li::before {
+    content: "•";
+    color: #ff69b4;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.resource-item a {
+    color: #0066c0;
+    text-decoration: none;
+}
+
+.resource-item a:hover {
+    text-decoration: underline;
+}
+
+.validation-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    background: linear-gradient(135deg, #fff0f3, #ffe4e8);
+    padding: 0.8rem 1.5rem;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border: 1px solid #ffb6c1;
+    font-weight: 500;
+}
+
+.badge-icon {
+    font-size: 1.3rem;
+}
+
+.test-notes {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #ff69b4;
+}
+
+.test-notes h3 {
+    color: #ff69b4;
+    margin-bottom: 1rem;
+}
+
+.test-notes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.test-notes li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.test-notes li::before {
+    content: "✓";
+    color: #ff69b4;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
 }
 
 /* ----- MODERN CARD GRID (About page) ----- */
@@ -531,9 +865,14 @@ hr {
     
     .folders-grid,
     .floating-boxes,
-    .info-boxes {
+    .info-boxes,
+    .resource-grid {
         grid-template-columns: 1fr;
         gap: 1.2rem;
+    }
+    
+    .form-container {
+        grid-template-columns: 1fr;
     }
     
     .carousel-slide {
@@ -550,8 +889,20 @@ hr {
         font-size: 2rem;
     }
     
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
     .modal-content {
         width: 95%;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .validation-badges {
+        flex-direction: column;
     }
 }
 
@@ -566,5 +917,9 @@ hr {
     
     .info-card h3 {
         font-size: 1.4rem;
+    }
+    
+    .reference-card {
+        padding: 1.2rem;
     }
 }
