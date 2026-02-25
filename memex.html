@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memex · Original</title>
+    <title>Microsoft · Memex Archive</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,55 +18,58 @@
     </nav>
 
     <main class="main-content">
-        <h1 class="page-title">🗃️ Memex</h1>
+        <h1 class="page-title">🗃️ Memex (1945)</h1>
         
         <div class="typewriter-container">
             <div class="typewriter-text" id="typewriter-memex"></div>
         </div>
 
         <div class="carousel-section">
-            <h2 class="carousel-title">Memex Microfilm</h2>
+            <h2 class="carousel-title">Vannevar Bush's Vision</h2>
             <div class="carousel-container" id="carousel-memex">
-                <button class="carousel-btn" data-dir="prev">←</button>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23b8d0f5'/%3E%3Ctext x='60' y='140' font-family='monospace' font-size='28' fill='%232563eb'%3E📇 memex 1945%3C/text%3E%3C/svg%3E" class="carousel-slide" alt="Memex">
-                <button class="carousel-btn" data-dir="next">→</button>
+                <button class="carousel-btn" data-dir="prev" aria-label="Previous image">←</button>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'%3E%3Crect width='500' height='300' fill='%23e0edff'/%3E%3Ctext x='80' y='160' font-family='Segoe UI, sans-serif' font-size='24' fill='%230078d4'%3E📇 Memex Concept (1945)%3C/text%3E%3C/svg%3E" class="carousel-slide" alt="Memex Concept">
+                <button class="carousel-btn" data-dir="next" aria-label="Next image">→</button>
             </div>
+            <p style="text-align: center; margin-top: 1rem; color: #5a5a5a;">"As We May Think" - The Atlantic Monthly, July 1945</p>
         </div>
 
         <div class="info-boxes">
-            <div class="info-card" data-popup="📊 FACT: Vannevar Bush described Memex in his 1945 essay 'As We May Think'.">
-                <h3>📋 Facts</h3>
-                <span class="info-badge">click</span>
+            <div class="info-card" data-popup="Vannevar Bush (1890-1974) was an American engineer and science administrator. His 1945 essay 'As We May Think' described the Memex concept, which directly inspired the development of hypertext and the World Wide Web.">
+                <h3>📋 Vannevar Bush</h3>
+                <span class="info-badge">The visionary</span>
             </div>
-            <div class="info-card" data-popup="ℹ️ INFO: Memex inspired hypertext, the web, and personal computing.">
-                <h3>ℹ️ Information</h3>
-                <span class="info-badge">click</span>
+            <div class="info-card" data-popup="The Memex was a hypothetical electromechanical device for individual use, storing books and records on microfilm. Users could create 'trails' of linked information, foreshadowing hyperlinks and associative indexing.">
+                <h3>ℹ️ Memex Concept</h3>
+                <span class="info-badge">How it worked</span>
             </div>
-            <div class="info-card" data-popup="🔗 LINK: https://en.wikipedia.org/wiki/Memex">
-                <h3>🌐 Link</h3>
-                <span class="info-badge">click</span>
+            <div class="info-card" data-popup="https://en.wikipedia.org/wiki/Memex">
+                <h3>🌐 Memex Wikipedia</h3>
+                <span class="info-badge">Learn more</span>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <span>📁 Memex · Vannevar Bush · 1945</span>
+        <span>📁 Memex · Vannevar Bush · 1945-2025 · Microsoft Archive</span>
     </footer>
 
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             createTypewriter('typewriter-memex', [
+                'Vannevar Bush\'s Memex (1945)',
+                'The Concept of Hypertext',
                 'As We May Think',
-                'Memex',
-                'Trail of thoughts',
-                'Vannevar Bush 1945'
+                'Father of Information Architecture',
+                'Precursor to the Web'
             ]);
             
             createCarousel('carousel-memex', [
-                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23b8d0f5\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E📇 memex 1945%3C/text%3E%3C/svg%3E',
-                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23aac0e5\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E📇 microfilm desk%3C/text%3E%3C/svg%3E',
-                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%239cb0d5\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E📇 associative trails%3C/text%3E%3C/svg%3E'
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23e0edff\'/%3E%3Ctext x=\'80\' y=\'160\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E📇 Memex Concept (1945)%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23d1e3ff\'/%3E%3Ctext x=\'80\' y=\'160\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E📇 Microfilm Storage%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23c2d9ff\'/%3E%3Ctext x=\'80\' y=\'160\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E🔗 Associative Trails%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23b3cfff\'/%3E%3Ctext x=\'80\' y=\'160\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E💡 Hypertext Origins%3C/text%3E%3C/svg%3E'
             ]);
         });
     </script>
