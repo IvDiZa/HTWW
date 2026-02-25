@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #fff0f3 0%, #ffe4e8 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,14 +17,14 @@ body {
 
 /* ----- MICROSOFT-STYLE NAVBAR ----- */
 .navbar {
-    background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+    background: linear-gradient(135deg, #b6baff 0%, #8a95f8 100%);
     padding: 0.75rem 2rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem 1.5rem;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -45,15 +45,15 @@ body {
 }
 
 .navbar a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.25);
     transform: translateY(-1px);
 }
 
 .navbar a.active {
     background-color: white;
-    color: #0078d4;
+    color: #ff69b4;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
 }
 
 /* ----- MAIN CONTENT ----- */
@@ -72,8 +72,8 @@ body {
     border-radius: 8px;
     display: inline-block;
     margin: 1rem 0 2rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    border-left: 6px solid #0078d4;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.1);
+    border-left: 6px solid #ff69b4;
     width: 100%;
     max-width: 900px;
 }
@@ -83,20 +83,20 @@ body {
     font-weight: 600;
     color: #1e1e1e;
     min-height: 3.8rem;
-    border-right: 3px solid #0078d4;
+    border-right: 3px solid #ff69b4;
     padding-right: 8px;
     animation: blinkCursor 0.8s step-end infinite;
     white-space: nowrap;
     overflow: hidden;
     letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 @keyframes blinkCursor {
-    0%, 100% { border-color: #0078d4; }
+    0%, 100% { border-color: #ff69b4; }
     50% { border-color: transparent; }
 }
 
@@ -115,15 +115,15 @@ body {
     text-align: center;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-    border: 1px solid #eaeaea;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.08);
+    border: 1px solid #ffe4e8;
     position: relative;
 }
 
 .folder:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 30px rgba(0, 120, 212, 0.15);
-    border-color: #0078d4;
+    box-shadow: 0 20px 30px rgba(255, 105, 180, 0.2);
+    border-color: #ff69b4;
 }
 
 .folder-icon {
@@ -140,7 +140,7 @@ body {
     color: #1e1e1e;
     font-size: 1.6rem;
     font-weight: 600;
-    background: #f5f5f5;
+    background: #fff0f3;
     display: inline-block;
     padding: 0.6rem 2rem;
     border-radius: 40px;
@@ -149,7 +149,7 @@ body {
 }
 
 .folder:hover .folder-name {
-    background: #0078d4;
+    background: #ff69b4;
     color: white;
 }
 
@@ -158,7 +158,7 @@ body {
     top: -40px;
     left: 50%;
     transform: translateX(-50%) scale(0.8);
-    background: #0078d4;
+    background: #ff69b4;
     color: white;
     border-radius: 30px;
     padding: 0.6rem 1.2rem;
@@ -167,7 +167,7 @@ body {
     transition: all 0.2s;
     pointer-events: none;
     white-space: nowrap;
-    box-shadow: 0 8px 20px rgba(0, 120, 212, 0.4);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
 }
 
 .folder:hover .folder-hover-img {
@@ -188,8 +188,8 @@ body {
     background: white;
     border-radius: 12px;
     padding: 1.8rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-    border: 1px solid #eaeaea;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.08);
+    border: 1px solid #ffe4e8;
     transition: all 0.3s;
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
@@ -213,12 +213,12 @@ body {
 
 .float-box:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 30px rgba(0, 120, 212, 0.12);
-    border-color: #0078d4;
+    box-shadow: 0 20px 30px rgba(255, 105, 180, 0.15);
+    border-color: #ff69b4;
 }
 
 .float-box strong {
-    color: #0078d4;
+    color: #ff69b4;
     font-size: 1.2rem;
     display: block;
     margin-bottom: 0.8rem;
@@ -227,18 +227,18 @@ body {
 .source-link {
     display: inline-block;
     margin-top: 1.2rem;
-    color: #0078d4;
+    color: #ff69b4;
     font-weight: 500;
     cursor: pointer;
     padding: 0.5rem 1rem;
     border-radius: 6px;
-    background: #f0f8ff;
+    background: #fff0f3;
     transition: all 0.2s;
     border: 1px solid transparent;
 }
 
 .source-link:hover {
-    background: #0078d4;
+    background: #ff69b4;
     color: white;
     border-color: white;
 }
@@ -249,7 +249,7 @@ body {
     border-radius: 16px;
     padding: 2.5rem;
     margin: 2.5rem 0;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 28px rgba(255, 105, 180, 0.08);
 }
 
 .carousel-title {
@@ -258,7 +258,7 @@ body {
     font-weight: 600;
     margin-bottom: 1.8rem;
     text-align: left;
-    border-bottom: 3px solid #f0f0f0;
+    border-bottom: 3px solid #fff0f3;
     padding-bottom: 1rem;
 }
 
@@ -272,14 +272,14 @@ body {
 
 .carousel-btn {
     background: white;
-    border: 2px solid #eaeaea;
+    border: 2px solid #ffe4e8;
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    color: #0078d4;
+    color: #ff69b4;
     font-size: 1.3rem;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.08);
     transition: all 0.2s;
     display: flex;
     align-items: center;
@@ -287,11 +287,11 @@ body {
 }
 
 .carousel-btn:hover {
-    background: #0078d4;
+    background: #ff69b4;
     color: white;
-    border-color: #0078d4;
+    border-color: #ff69b4;
     transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 120, 212, 0.3);
+    box-shadow: 0 8px 16px rgba(255, 105, 180, 0.3);
 }
 
 .carousel-slide {
@@ -299,9 +299,9 @@ body {
     height: 300px;
     object-fit: cover;
     border-radius: 16px;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 30px rgba(255, 105, 180, 0.15);
     transition: opacity 0.3s;
-    border: 1px solid #eaeaea;
+    border: 1px solid #ffe4e8;
 }
 
 /* ----- MODERN INFO CARDS ----- */
@@ -316,8 +316,8 @@ body {
     background: white;
     border-radius: 16px;
     padding: 2rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-    border: 1px solid #eaeaea;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.08);
+    border: 1px solid #ffe4e8;
     cursor: pointer;
     transition: all 0.3s;
     text-align: left;
@@ -332,7 +332,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #0078d4, #00bcf2);
+    background: linear-gradient(90deg, #ff69b4, #ffb6c1);
     transform: scaleX(0);
     transition: transform 0.3s;
 }
@@ -343,12 +343,12 @@ body {
 
 .info-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 25px 35px -10px rgba(0, 120, 212, 0.25);
-    border-color: #0078d4;
+    box-shadow: 0 25px 35px -10px rgba(255, 105, 180, 0.3);
+    border-color: #ff69b4;
 }
 
 .info-card h3 {
-    color: #0078d4;
+    color: #ff69b4;
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -366,8 +366,8 @@ body {
 
 .info-badge {
     display: inline-block;
-    background: #f0f8ff;
-    color: #0078d4;
+    background: #fff0f3;
+    color: #ff69b4;
     padding: 0.5rem 1.2rem;
     border-radius: 40px;
     font-weight: 500;
@@ -377,7 +377,7 @@ body {
 }
 
 .info-card:hover .info-badge {
-    background: #0078d4;
+    background: #ff69b4;
     color: white;
 }
 
@@ -386,7 +386,7 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
-    background: linear-gradient(135deg, #0078d4 0%, #005a9e 80%);
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -400,16 +400,16 @@ body {
     text-align: center;
     padding: 2rem;
     margin-top: 4rem;
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid #ffe4e8;
     font-weight: 400;
     font-size: 0.95rem;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 -4px 12px rgba(255, 105, 180, 0.05);
 }
 
 hr {
     border: none;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #0078d4, #00bcf2, #0078d4, transparent);
+    background: linear-gradient(90deg, transparent, #ff69b4, #ffb6c1, #ff69b4, transparent);
     margin: 3rem 0;
 }
 
@@ -432,7 +432,7 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 105, 180, 0.2);
     backdrop-filter: blur(4px);
 }
 
@@ -442,23 +442,23 @@ hr {
     border-radius: 16px;
     max-width: 450px;
     width: 90%;
-    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 40px 60px rgba(255, 105, 180, 0.3);
     animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .modal-header {
     padding: 1.3rem 1.8rem;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #ffe4e8;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #fff0f3 0%, #ffe4e8 100%);
     border-radius: 16px 16px 0 0;
 }
 
 .modal-header h3 {
-    color: #0078d4;
+    color: #ff69b4;
     font-size: 1.4rem;
     margin: 0;
     font-weight: 600;
@@ -476,7 +476,7 @@ hr {
 }
 
 .modal-close:hover {
-    color: #0078d4;
+    color: #ff69b4;
     transform: scale(1.1);
 }
 
@@ -502,7 +502,7 @@ hr {
 
 /* ----- UTILITY CLASSES ----- */
 .text-gradient {
-    background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -567,4 +567,4 @@ hr {
     .info-card h3 {
         font-size: 1.4rem;
     }
-    }
+}
