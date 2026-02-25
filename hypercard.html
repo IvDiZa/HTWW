@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HyperCard · Original</title>
+    <title>Microsoft · HyperCard Archive</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,55 +18,58 @@
     </nav>
 
     <main class="main-content">
-        <h1 class="page-title">🃏 The HyperCard I</h1>
+        <h1 class="page-title">🃏 HyperCard (1987-1998)</h1>
         
         <div class="typewriter-container">
             <div class="typewriter-text" id="typewriter-hypercard"></div>
         </div>
 
         <div class="carousel-section">
-            <h2 class="carousel-title">HyperCard Version 1.2.5</h2>
+            <h2 class="carousel-title">HyperCard Gallery</h2>
             <div class="carousel-container" id="carousel-hypercard">
-                <button class="carousel-btn" data-dir="prev">←</button>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23aac8ff'/%3E%3Ctext x='60' y='140' font-family='monospace' font-size='28' fill='%232563eb'%3E💾 HyperCard 1.2.5%3C/text%3E%3C/svg%3E" class="carousel-slide" alt="HyperCard">
-                <button class="carousel-btn" data-dir="next">→</button>
+                <button class="carousel-btn" data-dir="prev" aria-label="Previous image">←</button>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'%3E%3Crect width='500' height='300' fill='%23e6f0ff'/%3E%3Ctext x='80' y='160' font-family='Segoe UI, sans-serif' font-size='24' fill='%230078d4'%3E💾 HyperCard 1.0 (1987)%3C/text%3E%3C/svg%3E" class="carousel-slide" alt="HyperCard 1.0">
+                <button class="carousel-btn" data-dir="next" aria-label="Next image">→</button>
             </div>
+            <p style="text-align: center; margin-top: 1rem; color: #5a5a5a;">Use arrow keys or swipe to navigate</p>
         </div>
 
         <div class="info-boxes">
-            <div class="info-card" data-popup="📘 FACT: HyperCard included a programming language called HyperTalk, with English-like syntax.">
-                <h3>📋 Facts</h3>
-                <span class="info-badge">click</span>
+            <div class="info-card" data-popup="HyperCard included a revolutionary programming language called HyperTalk, which used English-like syntax making it accessible to non-programmers. It featured the concept of 'cards' and 'stacks'.">
+                <h3>📋 HyperTalk</h3>
+                <span class="info-badge">Learn more</span>
             </div>
-            <div class="info-card" data-popup="ℹ️ INFO: Designed by Bill Atkinson in 1987, it inspired the World Wide Web.">
-                <h3>ℹ️ Information</h3>
-                <span class="info-badge">click</span>
+            <div class="info-card" data-popup="Designed by Bill Atkinson at Apple in 1987, HyperCard was included free with every Mac. It inspired many web pioneers including Tim Berners-Lee and influenced the development of HTML.">
+                <h3>ℹ️ Bill Atkinson</h3>
+                <span class="info-badge">The creator</span>
             </div>
-            <div class="info-card" data-popup="🔗 LINK: https://archive.org/details/hypercard-stacks">
-                <h3>🌐 Link</h3>
-                <span class="info-badge">click</span>
+            <div class="info-card" data-popup="https://archive.org/details/hypercardstacks">
+                <h3>🌐 HyperCard Stacks</h3>
+                <span class="info-badge">Browse archive</span>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <span>📁 HyperCard · original version · 1987-2025</span>
+        <span>📁 HyperCard · Original Version · 1987-2025 · Microsoft Archive</span>
     </footer>
 
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             createTypewriter('typewriter-hypercard', [
-                'Welcome to HyperCard',
-                'Version 1.2.5',
-                'Stack of cards',
-                'Clickable buttons'
+                'HyperCard by Apple (1987)',
+                'The First Hypermedia System',
+                'Bill Atkinson\'s Masterpiece',
+                'Inspired the World Wide Web',
+                'Revolutionary HyperTalk Language'
             ]);
             
             createCarousel('carousel-hypercard', [
-                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23aac8ff\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E💾 HyperCard 1.2.5%3C/text%3E%3C/svg%3E',
-                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%2390b0f0\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E💾 Stack of cards%3C/text%3E%3C/svg%3E',
-                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23bad0ff\'/%3E%3Ctext x=\'60\' y=\'140\' font-family=\'monospace\' font-size=\'28\' fill=\'%232563eb\'%3E💾 HyperTalk code%3C/text%3E%3C/svg%3E'
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23e6f0ff\'/%3E%3Ctext x=\'80\' y=\'160\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E💾 HyperCard 1.0 (1987)%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23d4e3ff\'/%3E%3Ctext x=\'80\' y=\'140\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E🃏 Stack of Cards Interface%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23c2d6ff\'/%3E%3Ctext x=\'80\' y=\'140\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E💻 HyperTalk Programming%3C/text%3E%3C/svg%3E',
+                'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' viewBox=\'0 0 500 300\'%3E%3Crect width=\'500\' height=\'300\' fill=\'%23b0c9ff\'/%3E%3Ctext x=\'80\' y=\'140\' font-family=\'Segoe UI, sans-serif\' font-size=\'24\' fill=\'%230078d4\'%3E📱 HyperCard 2.0 (1990)%3C/text%3E%3C/svg%3E'
             ]);
         });
     </script>
