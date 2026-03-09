@@ -1,15 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- 
+    HTWW Final Website - index.html
+    
+    SOURCING & MODIFICATIONS:
+    - Base HTML5 structure: Custom built from standard web conventions
+    - Styling: Custom CSS framework in style.css with pink/blue color scheme
+    - Newsletter popup: Custom built form with email subscription flow
+    - Typewriter effect: Custom JavaScript implementation using recursive setTimeout
+    - Folder icons: Custom SVG implementations (HyperCard, Memex, Info Library)
+    - Modified: Added blue folder styling with custom pink SVG icons (March 2026)
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Microsoft HyperCard Archive · Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    /* 
+    INLINE STYLES FOR INDEX.HTML
+    
+    SOURCING & MODIFICATIONS:
+    - Newsletter button styling: Custom design inspired by modern UI patterns
+    - Popup overlay: Custom implementation using fixed positioning
+    - Form styling: Custom form design with accessibility features (labels, aria attributes)
+    - Modified by: User & AI Assistant (March 2026)
+    - Updates: Added pink/blue color scheme, form validation styling, responsive grid layouts
+    */
+    
+    /* Newsletter Trigger */
+.newsletter-trigger-section {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.newsletter-btn {
+    display: inline-block;
+    background: #1167e9; 
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 2px solid #b0e0e6; /* Powder blue */
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 #add8e6; /* Light blue */
+}
+
+.newsletter-btn:hover {
+    background: #ffc0cb; /* Pink */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #87ceeb; /* Sky blue */
+}
+
+/* Popup Overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 182, 193, 0.3); /* Light pink with opacity */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.popup-card {
+    background: #e6f3ff; /* Very light blue */
+    border: 4px solid #ffb6c1; /* Light pink */
+    border-radius: 24px;
+    padding: 2rem;
+    max-width: 1000px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 12px 12px 0 #ffc0cb; /* Pink */
+}
+
+.close-popup {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ff69b4; /* Hot pink */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.close-popup:hover {
+    background: #ffb6c1; /* Light pink */
+    color: #ffffff;
+    transform: rotate(90deg);
+}
+
+.popup-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .popup-split {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Forms */
+.contact-form {
+    background: #f0f8ff; /* Alice blue */
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 2px solid #ffb6c1; /* Light pink */
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    color: #ff69b4; /* Hot pink */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #add8e6; /* Light blue */
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: #ffffff;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ffb6c1; /* Light pink */
+    box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.2); /* Light pink with opacity */
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-primary, .btn-secondary, .btn-download {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: #87ceeb; /* Sky blue */
+    color: #4a4a6a;
+    flex: 2;
+}
+
+.btn-primary:hover {
+    background: #add8e6; /* Light blue */
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #1173e4; /* Light pink */
+    color: #4a4a6a;
+    flex: 1;
+}
+
+.btn-secondary:hover {
+    background: #ffc0cb; /* Pink */
+    transform: translateY(-2px);
+}
+
+.btn-download {
+    background: #ff69b4; /* Hot pink */
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-download:hover {
+    background: #ffb6c1; /* Light pink */
+    transform: translateY(-2px);
+}
+
+.form-status {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    background: #e6f3ff; /* Very light blue */
+    color: #ff69b4; /* Hot pink */
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+/* Example Newsletter */
+.example-newsletter {
+    background: #fff0f5; /* Lavender blush */
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 2px solid #87ceeb; /* Sky blue */
+}
+
+.newsletter-sample-content {
+    background: #f0f8ff; /* Alice blue */
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid #ffb6c1; /* Light pink */
+    margin: 1rem 0;
+}
+
+.form-info-card {
+    background: #f0f8ff; /* Alice blue */
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid #ff69b4; /* Hot pink */
+}
+
+
+        .folder {
+            width: 300px;
+            height: inherit;           
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            position: relative;
+        }
+
+        .folder:hover {
+            transform: translateY(-4px);
+        }
+
+        /* icon container: consistent half-size */
+        .folder-icon {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+        }
+
+        /* all SVGs scale perfectly within 100% width, drop shadow kept */
+        .folder-icon svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            filter: drop-shadow(0 1px 2px rgba(255, 105, 180, 0.4)); /* softer shadow */
+        }
+
+</style>
 <body>
     <nav class="navbar">
         <a href="index.html" class="active">🏠 Home</a>
-        <a href="about.html">📄 About</a>
         <a href="hypercard.html">🃏 Hypercard</a>
         <a href="info_library.html">📚 Info Library</a>
         <a href="memex.html">🗃️ Memex</a>
@@ -22,106 +310,177 @@
         </div>
 
         <div class="folders-grid">
-            <div class="folder" data-target="hypercard" data-popup="📁 Explore the original HyperCard from 1987">
-                <div class="folder-icon">🃏</div>
-                <div class="folder-name">HYPERCARD</div>
-                <div class="folder-hover-img">✨ Click to explore HyperCard</div>
+            <!-- HyperCard folder icon (SVG) -->
+             <div class="folder" data-target="hypercard" data-popup="📁 Explore the original HyperCard from 1987">
+             <div class="folder-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="15" y="35" width="50" height="40" fill="#ff69b4" rx="4"/>
+                    <rect x="20" y="30" width="50" height="40" fill="#ffb6c1" rx="4"/>
+                    <rect x="25" y="25" width="50" height="40" fill="#ffc0cb" rx="4"/>
+                    <line x1="35" y1="40" x2="65" y2="40" stroke="#ffffff" stroke-width="2"/>
+                    <line x1="35" y1="50" x2="65" y2="50" stroke="#ffffff" stroke-width="2"/>
+                    <line x1="35" y1="60" x2="55" y2="60" stroke="#ffffff" stroke-width="2"/>
+                </svg>
+             </div>
+             <div class="folder-name">HYPERCARD</div>
+             <div class="folder-hover-img">✨ Click to explore HyperCard</div>
+        </div>
+        <!-- Memex folder -->
+        <div class="folder" data-target="memex" data-popup="📁 Discover Vannevar Bush's Memex concept">
+            <div class="folder-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="15" width="60" height="70" fill="#ff69b4" stroke="#ffb6c1" stroke-width="2" rx="4"/>
+                    <rect x="25" y="22" width="50" height="12" fill="#ffb6c1" rx="2"/>
+                    <line x1="25" y1="34" x2="75" y2="34" stroke="#ffb6c1" stroke-width="1"/>
+                    <rect x="25" y="38" width="50" height="12" fill="#ffc0cb" rx="2"/>
+                    <line x1="25" y1="50" x2="75" y2="50" stroke="#ffc0cb" stroke-width="1"/>
+                    <rect x="25" y="54" width="50" height="12" fill="#ffb6c1" rx="2"/>
+                    <circle cx="50" cy="25" r="2" fill="#ffffff"/>
+                    <circle cx="50" cy="44" r="2" fill="#ffffff"/>
+                    <circle cx="50" cy="60" r="2" fill="#ffffff"/>
+                    <line x1="50" y1="27" x2="50" y2="42" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,2"/>
+                    <line x1="50" y1="46" x2="50" y2="58" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,2"/>
+                </svg>
             </div>
-            <div class="folder" data-target="memex" data-popup="📁 Discover Vannevar Bush's Memex concept">
-                <div class="folder-icon">🗃️</div>
-                <div class="folder-name">MEMEX</div>
-                <div class="folder-hover-img">🔗 Trails of thought</div>
+            <div class="folder-name">MEMEX</div>
+            <div class="folder-hover-img">🔗 Trails of thought</div>
+        </div>
+        <!-- Info Library folder -->
+        <div class="folder" data-target="info_library" data-popup="📁 Browse the information library">
+            <div class="folder-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="15" y="50" width="25" height="35" fill="#ff69b4" rx="2"/>
+                    <rect x="42" y="40" width="25" height="45" fill="#ffb6c1" rx="2"/>
+                    <rect x="69" y="30" width="25" height="55" fill="#ffc0cb" rx="2"/>
+                    <line x1="20" y1="60" x2="35" y2="60" stroke="#ffffff" stroke-width="1.5"/>
+                    <line x1="20" y1="70" x2="35" y2="70" stroke="#ffffff" stroke-width="1.5"/>
+                    <line x1="47" y1="55" x2="62" y2="55" stroke="#ffffff" stroke-width="1.5"/>
+                    <line x1="47" y1="68" x2="62" y2="68" stroke="#ffffff" stroke-width="1.5"/>
+                    <line x1="74" y1="45" x2="89" y2="45" stroke="#ffffff" stroke-width="1.5"/>
+                    <line x1="74" y1="60" x2="89" y2="60" stroke="#ffffff" stroke-width="1.5"/>
+                </svg>
             </div>
-            <div class="folder" data-target="info_library" data-popup="📁 Browse the information library">
-                <div class="folder-icon">📚</div>
-                <div class="folder-name">INFO LIBRARY</div>
-                <div class="folder-hover-img">🌐 Universal knowledge</div>
+            <div class="folder-name">INFO LIBRARY</div>
+            <div class="folder-hover-img">📚 Browse library</div>
+        </div>
+    </div>
+
+        <div class="newsletter-trigger-section">
+            <div class="newsletter-btn" id="newsletterTrigger">
+                <span>📬</span> Click for Newsletter & Subscription <span>📬</span>
             </div>
         </div>
 
-        <!-- NEW: Contact/Subscribe Form Section -->
-        <section class="form-section" aria-labelledby="form-heading">
-            <h2 id="form-heading" class="section-title">📬 Stay Updated</h2>
-            <div class="form-container">
-                <form id="contact-form" class="contact-form" action="#" method="post">
-                    <div class="form-group">
-                        <label for="name">Your Name <span aria-hidden="true">*</span></label>
-                        <input type="text" id="name" name="name" required aria-required="true" placeholder="e.g., Tim Berners-Lee">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address <span aria-hidden="true">*</span></label>
-                        <input type="email" id="email" name="email" required aria-required="true" placeholder="your.email@example.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="interest">Primary Interest</label>
-                        <select id="interest" name="interest">
-                            <option value="">-- Select an option --</option>
-                            <option value="hypercard">HyperCard</option>
-                            <option value="memex">Memex</option>
-                            <option value="web-history">Web History</option>
-                            <option value="digital-preservation">Digital Preservation</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message / Questions</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Share your thoughts about hypertext history..."></textarea>
-                    </div>
-                    
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="newsletter" name="newsletter" checked>
-                        <label for="newsletter">Subscribe to our newsletter</label>
-                    </div>
-                    
-                    <div class="form-actions">
-                        <button type="submit" class="btn-primary">Send Message</button>
-                        <button type="reset" class="btn-secondary">Clear Form</button>
-                    </div>
-                    
-                    <!-- Form status message (hidden by default) -->
-                    <div id="form-status" class="form-status" role="alert" aria-live="polite" style="display: none;"></div>
-                </form>
-                
-                <div class="form-info-card">
-                    <h3>📋 Why Subscribe?</h3>
-                    <ul>
-                        <li>🔔 Updates on new archive additions</li>
-                        <li>📚 Curated readings on hypertext history</li>
-                        <li>🎓 Exclusive educational resources</li>
-                        <li>💬 Join the digital history community</li>
-                    </ul>
-                    <p class="small-note">Your information is never shared. Unsubscribe anytime.</p>
-                </div>
-            </div>
-        </section>
+        <!-- POPUP overlay (form + example + download) -->
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-card">
+                <button class="close-popup" id="closePopupBtn" aria-label="Close popup">&times;</button>
+                <h2 style="color:#2d2d3a;">📫 HyperCard Archive Newsletter</h2>
+                <div class="popup-split">
+                    <!-- LEFT: subscription form -->
+                    <section class="form-section" aria-labelledby="form-heading">
+                        <h3 id="form-heading" style="margin-top:0; color:#ff69b4;">📬 Stay Updated</h3>
+                        <form id="contact-form" class="contact-form" action="#" method="post">
+                            <div class="form-group">
+                                <label for="name">Your Name <span>*</span></label>
+                                <input type="text" id="name" name="name" required placeholder="e.g., Tim Berners-Lee">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span>*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="interest">Primary Interest</label>
+                                <select id="interest" name="interest">
+                                    <option value="">-- Select --</option>
+                                    <option value="hypercard">HyperCard</option>
+                                    <option value="memex">Memex</option>
+                                    <option value="web-history">Web History</option>
+                                    <option value="digital-preservation">Digital Preservation</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message / Questions</label>
+                                <textarea id="message" name="message" rows="3" placeholder="Share your thoughts..."></textarea>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter" checked>
+                                <label for="newsletter">Subscribe to our newsletter</label>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Send Message</button>
+                                <button type="reset" class="btn-secondary">Clear Form</button>
+                            </div>
+                            <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+                        </form>
+                    </section>
 
-        <div class="info-boxes">
-            <div class="info-card" data-popup="HyperCard was released in 1987 by Apple and inspired the World Wide Web. It was created by Bill Atkinson and included a programming language called HyperTalk.">
-                <h3>📋 Key Fact</h3>
-                <p>The birthplace of hypermedia</p>
-                <span class="info-badge">Click for details</span>
-            </div>
-            <div class="info-card" data-popup="This digital archive preserves the history of hypertext systems, from Memex (1945) to HyperCard (1987) and beyond. All content is sourced from historical documents and archives.">
-                <h3>ℹ️ About This Archive</h3>
-                <p>Preserving digital history</p>
-                <span class="info-badge">Learn more</span>
-            </div>
-            <div class="info-card" data-popup="https://archive.org/details/hypercard">
-                <h3>🌐 External Resources</h3>
-                <p>Connect to Internet Archive</p>
-                <span class="info-badge">Visit link</span>
+                    <!-- RIGHT: example newsletter + download -->
+                    <div class="example-newsletter">
+                        <h3 style="color:#2d2d3a;">📰 <span>Example issue</span></h3>
+                        <div class="newsletter-sample-content" id="sampleNewsletterContent">
+                            <strong>📅 MARCH 2025 – MEMEX EDITION</strong>
+                            <p style="margin:0.5rem 0">▸ Vannevar Bush's As We May Think<br>▸ HyperCard 2.0 sneak peek<br>▸ Interview: HyperTalk wizard<br>▸ Digital preservation workshop</p>
+                            <p style="font-style:italic">… plus stack exchange, history bits.</p>
+                        </div>
+                        <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap; margin:1.5rem 0 1rem">
+                            <button class="btn-download" id="downloadNewsletterBtn">📥 Download sample PDF</button>
+                            <span style="color:#4a3729;">(or view below)</span>
+                        </div>
+                        <div style="background:#fff2db; border-radius:16px; padding:0.8rem; border:2px solid #a67c52;">
+                            <p><strong>Quick preview:</strong> “Memex trail blazes the hypertext path — read full inside.”</p>
+                        </div>
+                        <div class="form-info-card" style="margin-top:1rem; background:#f0f8ff; padding:1rem; border-radius:8px; border:2px solid #ff69b4;">
+                            <h4 style="color:#ff69b4;">📋 Why subscribe?</h4>
+                            <ul style="margin-left:1.5rem;">
+                                <li>🔔 Updates on new archive additions</li>
+                                <li>📚 Curated readings on hypertext history</li>
+                                <li>🎓 Exclusive educational resources</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align:right; margin-top:1rem; font-size:0.9rem; color:#4a3729;">🔐 We respect your privacy.</p>
             </div>
         </div>
     </main>
 
+    <!-- 🟢 FIXED FOOTER: now properly separated, flex-bottom aligned -->
     <footer class="footer">
-        <span>📁 Microsoft HyperCard Archive · Preserving Digital History · 2025</span>
+        <span>📁 The elements of the past and their impact · By: Ivana Zaykova · 2026</span>
     </footer>
 
     <script src="script.js"></script>
     <script>
+        // Typewriter effect (preserved)
+        function createTypewriter(elementId, phrases) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            let phraseIndex = 0, charIndex = 0, isDeleting = false, currentText = '';
+            function type() {
+                const currentPhrase = phrases[phraseIndex];
+                if (isDeleting) {
+                    currentText = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    currentText = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                element.textContent = currentText;
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    isDeleting = true;
+                    setTimeout(type, 2000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, isDeleting ? 50 : 100);
+                }
+            }
+            type();
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             createTypewriter('typewriter-main', [
                 'Microsoft HyperCard Archive',
@@ -130,6 +489,89 @@
                 'From Memex to Modern Web',
                 'Interactive Knowledge Base'
             ]);
+
+            // Popup logic
+            const triggerBtn = document.getElementById('newsletterTrigger');
+            const popup = document.getElementById('popupOverlay');
+            const closeBtn = document.getElementById('closePopupBtn');
+
+            function openPopup() { popup.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+            function closePopup() { popup.style.display = 'none'; document.body.style.overflow = ''; }
+
+            if (triggerBtn) triggerBtn.addEventListener('click', openPopup);
+            if (closeBtn) closeBtn.addEventListener('click', closePopup);
+            if (popup) popup.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && popup && popup.style.display === 'flex') closePopup();
+            });
+
+            // download sample newsletter
+            const downloadBtn = document.getElementById('downloadNewsletterBtn');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function() {
+                    const sample = document.getElementById('sampleNewsletterContent');
+                    if (sample) {
+                        const content = sample.innerText;
+                        const blob = new Blob(["MICROSOFT HYPERCARD NEWSLETTER (demo)\n\n" + content + "\n\n--- hypercard.archive/demo"], { type: 'text/plain' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url; a.download = 'HyperCard_Newsletter_demo.txt';
+                        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                        const status = document.getElementById('form-status');
+                        if (status) {
+                            status.style.display = 'block';
+                            status.textContent = '✅ Demo newsletter downloaded.';
+                            setTimeout(() => status.style.display = 'none', 2000);
+                        }
+                    }
+                });
+            }
+
+            // form handling
+            const form = document.getElementById('contact-form');
+            if (form) {
+                const formStatus = document.getElementById('form-status');
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (formStatus) {
+                        formStatus.style.display = 'block';
+                        formStatus.textContent = '✨ Thanks! (Demo: message not actually sent).';
+                        setTimeout(() => formStatus.style.display = 'none', 2500);
+                    }
+                    form.reset();
+                });
+                const resetBtn = form.querySelector('button[type="reset"]');
+                if (resetBtn) {
+                    resetBtn.addEventListener('click', function() {
+                        setTimeout(() => {
+                            if (formStatus) {
+                                formStatus.style.display = 'block';
+                                formStatus.textContent = '🧹 Form cleared.';
+                                setTimeout(() => formStatus.style.display = 'none', 1500);
+                            }
+                        }, 10);
+                    });
+                }
+            }
+
+            // folder navigation
+            document.querySelectorAll('.folder').forEach(f => {
+                f.addEventListener('click', function() {
+                    const target = this.dataset.target;
+                    if (target) window.location.href = target + '.html';
+                });
+            });
+
+            // info cards popup (if any)
+            document.querySelectorAll('.info-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const msg = this.dataset.popup || 'more info';
+                    if (msg.startsWith('http')) window.open(msg, '_blank');
+                    else alert(msg);
+                });
+            });
         });
     </script>
 </body>
